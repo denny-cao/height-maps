@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <!-- Flat plane -->
+    <!--
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    -->
+    
+    <model name="heightmap">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <heightmap>
+              <uri>file://media/materials/textures/1.png</uri>
+              <size>17 17 15</size>
+              <pos>35 35 0</pos>
+            </heightmap>
+          </geometry>
+        </collision>
+        <visual name="visual_abcedf">
+          <geometry>
+            <heightmap>
+              <use_terrain_paging>false</use_terrain_paging>
+              <texture>
+                <diffuse>file://media/materials/textures/dirt_diffusespecular.png</diffuse>
+                <normal>file://media/materials/textures/flat_normal.png</normal>
+                <size>1</size>
+              </texture>
+              <texture>
+                <diffuse>file://media/materials/textures/grass_diffusespecular.png</diffuse>
+                <normal>file://media/materials/textures/flat_normal.png</normal>
+                <size>1</size>
+              </texture>
+              <texture>
+                <diffuse>file://media/materials/textures/fungus_diffusespecular.png</diffuse>
+                <normal>file://media/materials/textures/flat_normal.png</normal>
+                <size>1</size>
+              </texture>
+              <blend>
+                <min_height>2</min_height>
+                <fade_dist>5</fade_dist>
+              </blend>
+              <blend>
+                <min_height>4</min_height>
+                <fade_dist>5</fade_dist>
+              </blend>
+              <!-- TO DO: Make python script to make these files but swap out the number -->
+              <uri>file://media/materials/textures/1.png</uri>
+              <size>17 17 15</size>
+              <pos>35 35 0</pos>
+            </heightmap>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>
