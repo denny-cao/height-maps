@@ -4,8 +4,9 @@ from matplotlib import pyplot as plt
 from random import randint
 import sys
 
+
 def height_map(amount):
-    shape = (512,512)
+    shape = (17, 17)
     repeat = (2048, 2048)
     scale = 50.0
     for number in range(amount + 1):
@@ -26,7 +27,7 @@ def height_map(amount):
                                             repeatx=512, 
                                             repeaty=512, 
                                             base=base)
-                '''
+                ''' 
         plt.imsave(f"{'0' * (len(str(amount)) - len(str(number)))}{number}.png", heightmap, cmap="gray")
     '''
     source /opt/ros/melodic/setup.bash
