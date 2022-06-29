@@ -6,7 +6,7 @@ import sys
 
 
 def height_map(amount):
-    shape = (17, 17)
+    shape = (33, 33)
     repeat = (2048, 2048)
     scale = 50.0
     for number in range(amount + 1):
