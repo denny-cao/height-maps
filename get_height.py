@@ -12,15 +12,16 @@ def convert_to_array_index(x, y, scale):
     '''
     Convert world coordinates to array indices
     '''
-    
-    # Ratio to get indice if top left point was (-65, 65) -> Center is (0,0)
-    x_index = x * 64 / scale
-    y_index = y * 64 / scale
 
-    # Shift indices to make top left point (0,0) instead of (-65, 65)
-    x_index += 64
-    y_index -= 64
+    # Shift indices to make top left point (0,0)
+    x_index = x + scale
+    y_index = abs(y - scale)
+        
+    # Ratio to get indice if top left point was (-x, y) -> Center is (0,0)
+    x_index *= (64 / scale)
+    y_index *= (64 / scale)
 
+    print(x_index, y_index)
     return round(x_index), round(y_index)
 
 
@@ -28,12 +29,5 @@ def scale_height(max: float, current_height: int) -> float:
     '''
     Scale height from 0-255 to max height of world file
     '''
-
-    return (current_height / 255) * max
-
-
-
-print(height("0.png", .9, .9, .25))
-
-
     
+    return (current_height / 255) * max
