@@ -10,5 +10,3 @@ def replace_heightmap(number):
 
 
     tree.write("heightmap0.world")
-
-replace_heightmap(1)

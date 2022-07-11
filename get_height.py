@@ -21,7 +21,6 @@ def convert_to_array_index(x, y, scale):
     x_index *= (64 / scale)
     y_index *= (64 / scale)
 
-    print(x_index, y_index)
     return round(x_index), round(y_index)
 
 
